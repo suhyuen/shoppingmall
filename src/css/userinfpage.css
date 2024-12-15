@@ -1,0 +1,48 @@
+.userinf {
+  margin: 100px auto;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.userinf_title > p {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.userinf_main {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 60px;
+}
+
+.userinf_main > div > p:not(:first-of-type) {
+  font-size: 14px;
+  margin-top: 8px;
+  color: rgb(0, 0, 0, 0.5);
+}
+
+.userinf_main > div > button {
+  width: 376px;
+  height: 40px;
+  border: 0px;
+  margin-top: 40px;
+  background: linear-gradient(
+    to bottom,
+    white,
+    rgb(177, 177, 177),
+    rgb(128, 128, 128)
+  );
+}
+
+.userinf_main > div:last-of-type {
+  border-top: 0.5px solid rgb(0, 0, 0, 0.3);
+}
+
+.userinf_main > div:last-of-type > p {
+  font-size: 12px;
+  margin-top: 116px;
+  margin-left: 524px;
+  color: rgb(0, 0, 0, 0.5);
+}

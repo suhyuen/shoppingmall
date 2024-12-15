@@ -1,0 +1,156 @@
+.loginpage {
+  width: 1160px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.loginpage_title {
+  margin-top: 140px;
+  margin-bottom: 40px;
+  width: 180px;
+  font-size: 20px;
+  font-family: "Inria";
+  border-bottom: 2px solid black;
+  padding-bottom: 4px;
+}
+
+.loginpage_title > p {
+  width: 180px;
+  border-bottom: 1px solid black;
+  padding-bottom: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.loginpage_main {
+  display: flex;
+  gap: 16px;
+}
+
+.loginpage_box {
+  width: 474px;
+  height: 300px;
+  border: 0.5px solid rgb(0, 0, 0, 0.5);
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.loginpage_idpw > p {
+  font-family: "Inria";
+  margin-bottom: 8px;
+}
+
+.loginpage_idpw > input {
+  width: 352px;
+  height: 40px;
+  outline: none;
+}
+
+.loginpage_idpw > input:last-of-type {
+  margin-bottom: 16px;
+}
+
+.loginpage_button > button {
+  width: 352px;
+  height: 40px;
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inria";
+  border: 0px;
+  margin-top: 24px;
+}
+
+.loginpage_main > div > div > button {
+  width: 352px;
+  height: 40px;
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inria";
+  border: 0px;
+  margin-top: 24px;
+}
+
+.loginpage_signup > p {
+  margin-bottom: -16px;
+}
+
+a > .loginpage_button {
+  margin-bottom: 24px;
+  width: 352px;
+  height: 40px;
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inria";
+  border: 0px;
+  margin-top: 24px;
+  cursor: pointer;
+}
+
+.loginpage_signup > a > button {
+  margin-bottom: 24px;
+  width: 352px;
+  height: 40px;
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inria";
+  border: 0px;
+  margin-top: 24px;
+  cursor: pointer;
+}
+
+.loginpage_sns {
+  margin-bottom: 100px;
+}
+
+.loginpage_sns > div {
+  display: flex;
+  gap: 16px;
+}
+
+.loginpage_sns > div > div {
+  width: 180px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  border: 0.5px solid rgb(0, 0, 0, 0.5);
+}
+
+.loginpage_sns > div > div > p {
+  margin-left: 28px;
+}
+
+.loginpage_sns > div > div:nth-child(1) > img {
+  margin-left: 8px;
+}
+
+.loginpage_sns > div > div:nth-child(3) > img {
+  margin-left: 8px;
+}
+
+.loginpage_sns > div > div:nth-child(2) {
+  background-color: #00bf19;
+  color: white;
+}
+
+.loginpage_sns > div > div:nth-child(3) {
+  background-color: #f7e111;
+}
+
+.loginpage_sns > div > div:nth-child(4) {
+  background-color: black;
+  color: white;
+}

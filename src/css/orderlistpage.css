@@ -1,0 +1,110 @@
+.orderlistpage {
+  width: 1160px;
+  margin: 100px auto;
+}
+
+.orderlistpage_title > p {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.orderlistpage_main {
+  border: 1px solid black;
+  width: 1160px;
+}
+
+.orderlistpage_main > div {
+  gap: 24px;
+}
+
+.orderlistpage_main > div:first-child {
+  width: 1160px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+
+.orderlistpage_main > div:first-child > div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  width: 572px;
+  height: 40px;
+  margin-left: 24px;
+}
+
+.orderlistpage_main > div:first-child > div:nth-child(2) {
+  width: 294px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.orderlistpage_main > div:first-child > div:nth-child(3) {
+  width: 294px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.orderlistpage_main > div:first-child > div > p {
+  font-size: 14px;
+}
+
+.orderlistpage_main_list {
+  display: flex;
+  border-bottom: 0.5px solid rgb(0, 0, 0, 0.3);
+}
+
+.orderlistpage_main_list > div > div > p {
+  font-size: 14px;
+}
+
+.orderlistpage_main_list > div:first-child {
+  width: 572px;
+  height: 151px;
+  display: flex;
+  gap: 24px;
+  border-right: 0.5px solid rgb(0, 0, 0, 0.3);
+  margin-left: 24px;
+  padding-top: 24px;
+  box-sizing: border-box;
+}
+
+.orderlistpage_main_list > div:first-child > div {
+  display: flex;
+  gap: 24px;
+}
+
+.orderlistpage_main_list > div:first-child > input {
+  margin-bottom: 111px;
+}
+
+.orderlistpage_main_list > div:first-child > div:nth-child(3) {
+  margin-left: 170px;
+  cursor: pointer;
+}
+
+.orderlistpage_main_list > div:nth-child(2) {
+  width: 294px;
+  height: 151px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border-right: 0.5px solid rgb(0, 0, 0, 0.3);
+}
+
+.orderlistpage_main_list > div:nth-child(3) {
+  width: 294px;
+  height: 151px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  box-sizing: border-box;
+}

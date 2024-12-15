@@ -1,0 +1,24 @@
+footer {
+  width: 1730px;
+  height: 240px;
+  border-top: 0.5px solid rgb(0, 0, 0, 0.5);
+  margin-top: 100px;
+}
+
+.footer {
+  margin-top: 40px;
+  margin-left: 380px;
+}
+.footer > div > ul {
+  display: flex;
+  gap: 24px;
+}
+
+.footer > div > ul > li:not(:first-child) {
+  border-left: 1px solid black;
+  padding-left: 16px;
+}
+
+.footer > div:first-child > ul:first-of-type {
+  margin-bottom: 36px;
+}

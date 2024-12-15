@@ -1,0 +1,50 @@
+header {
+  position: relative;
+  width: 1730px;
+}
+
+header > div {
+  display: flex;
+  margin: 0 auto;
+  width: 1160px;
+  height: 80px;
+  gap: 40px;
+  align-items: center;
+}
+
+.logo {
+  font-size: 30px;
+  font-family: "Jaini";
+}
+
+header > div > ul {
+  display: flex;
+  gap: 40px;
+}
+
+header > div > ul > li {
+  font-family: "Inria";
+}
+
+.loginbutton {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 20px;
+  font-family: "Inika";
+}
+
+.loginbutton > button {
+  top: 20px;
+  right: 40px;
+  font-size: 20px;
+  font-family: "Inika";
+  border: 0px solid;
+  background-color: white;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.loginbutton > button:first-child {
+  border-right: 1px solid black;
+}

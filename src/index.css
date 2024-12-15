@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+@font-face {
+  font-family: "Jaini";
+  src: url("../public/fonts/Jaini-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Inria";
+  src: url("../public/fonts/InriaSans-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Inika";
+  src: url("../public/fonts/Inika-Regular.woff") format("woff");
+}

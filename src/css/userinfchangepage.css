@@ -1,0 +1,76 @@
+.userinfchangepage_nav {
+  width: 1160px;
+  margin: 0 auto;
+  margin-top: 100px;
+  display: flex;
+  gap: 114px;
+}
+
+.userinfchangepage_main {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.userinfchangepage_main > div > p {
+  margin-bottom: 8px;
+}
+
+.userinfchangepage_main > div > input {
+  border: 0.5px solid rgb(0, 0, 0, 0.3);
+}
+
+.userinfchangepage_main > div:first-of-type > input {
+  width: 380px;
+  height: 30px;
+}
+
+.userinfchangepage_main > div:nth-child(2) > input {
+  width: 380px;
+  height: 30px;
+}
+
+.userinfchangepage_main > div:nth-child(3) > div {
+  display: flex;
+  gap: 16px;
+}
+
+.userinfchangepage_main > div:nth-child(3) > div > input {
+  width: 380px;
+  height: 30px;
+  border: 0.5px solid rgb(0, 0, 0, 0.3);
+}
+
+.userinfchangepage_main > div:nth-child(3) > div > button {
+  width: 82px;
+  height: 30px;
+  background: linear-gradient(
+    to bottom,
+    white,
+    rgb(177, 177, 177),
+    rgb(128, 128, 128)
+  );
+  border: 0px;
+  font-size: 12px;
+}
+
+.userinfchangepage_main > div:nth-child(4) > input {
+  width: 474px;
+  height: 30px;
+}
+
+.userinfchangepage_main > div:last-of-type {
+  margin-top: 40px;
+}
+
+.userinfchangepage_main > div:last-of-type > button {
+  width: 376px;
+  height: 40px;
+  background: linear-gradient(
+    to bottom,
+    white,
+    rgb(177, 177, 177),
+    rgb(128, 128, 128)
+  );
+  border: 0px;
+}
