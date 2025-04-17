@@ -6,7 +6,10 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 export default function MyPage() {
-  const [userData, setUserData] = useState({ userName: "" });
+  const [userData, setUserData] = useState({
+    uid: "",
+    userName: ""
+  });
 
   useEffect(() => {
     axios
@@ -56,7 +59,7 @@ export default function MyPage() {
           <div className="mypage_orderlist">
             <div>
               <p>주문내역 전체 보기</p>
-              <div className="mypage_arrow">&gt;</div>
+              <Link to="/orderlist"><div className="mypage_arrow">&gt;</div></Link>
             </div>
             <div>
               <div>
@@ -88,11 +91,11 @@ export default function MyPage() {
           <div className="mypage_cart">
             <div>
               <p>장바구니 전체 보기</p>
-              <div className="mypage_arrow">&gt;</div>
+              <Link to={`/cart?uid=${userData.uid}`}><div className="mypage_arrow">&gt;</div></Link>
             </div>
             <div>
               <div>
-                현재 000님의 장바구니에&nbsp;<span>00</span>&nbsp;개 상품이
+                현재 이수현님의 장바구니에&nbsp;<span>1</span>&nbsp;개 상품이
                 담겨있습니다.
               </div>
             </div>

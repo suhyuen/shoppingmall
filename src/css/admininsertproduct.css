@@ -1,0 +1,74 @@
+.admin_insertproduct {
+    width: 1160px;
+    margin: 100px auto;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.admin_insertproduct_img {
+    width: 400px;
+    height: 480px;
+}
+
+.select_image {
+    display: flex;
+    justify-content: center;
+}
+
+.select_image>button {
+    border: solid 0.5px rgb(0, 0, 0, 0.5);
+    margin-top: 16px;
+    font-weight: bold;
+    background-color: white;
+}
+
+.select_image>button {
+    width: 150px;
+    height: 30px;
+}
+
+.insertproduct_inf {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.insertproduct_inf>div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+}
+
+.insertproduct_inf>div>p {
+    font-weight: bold;
+}
+
+.insertproduct_inf>div>input {
+    border: solid 0.5px rgb(0, 0, 0, 0.5);
+    width: 200px;
+    height: 20px;
+}
+
+.insertproduct_inf>div>select {
+    border: solid 0.5px rgb(0, 0, 0, 0.5);
+    width: 200px;
+    height: 20px;
+}
+
+.insertproduct_inf>div {
+    width: 400px;
+}
+
+.insertproduct_inf>div:last-of-type {
+    display: flex;
+}
+
+.insertproduct_inf>div>button {
+    margin-top: 200px;
+    width: 100px;
+    height: 30px;
+    background-color: aliceblue;
+    border: solid 0.5px rgb(0, 0, 0, 0.5);
+}

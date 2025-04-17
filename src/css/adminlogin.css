@@ -1,0 +1,47 @@
+.admin_login{
+    width:1730px;
+    background-color: #e6e6e6;
+}
+
+.admin_login_header{
+    font-family: "jaini";
+    font-size: 30px;
+    margin: 0 auto;
+    width :1160px;
+}
+
+.admin_loginbox{
+    width:1160px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loginpage_box{
+    background-color: white;;
+}
+
+.admin_loginpage_idpw>input{
+    width:426px;
+    height:40px;
+}
+
+.admin_loginpage_idpw{
+    display:flex;
+    flex-direction: column;
+    gap:8px;
+    margin-bottom: 16px;
+}
+
+.admin_loginpage_button>button{
+    width: 426px;
+  height: 40px;
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inria";
+  border: 0px;
+  margin-top: 24px;
+}

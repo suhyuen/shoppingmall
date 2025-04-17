@@ -4,18 +4,27 @@
   gap: 32px;
 }
 
+.homepage_1 img {
+  transition: opacity 1s ease-in-out;
+  opacity: 1;
+}
+
+.homepage_1 img.fade-out {
+  opacity: 0;
+}
+
 .homepage_2 {
   margin-top: 160px;
   margin-left: 380px;
 }
 
-.homepage_2 > div:first-child {
+.homepage_2>div:first-child {
   font-size: 40px;
   font-family: "Inika";
   margin-bottom: 40px;
 }
 
-.homepage_2 > div:last-child {
+.homepage_2>div:last-child {
   display: grid;
   grid-template-columns: 277px 277px 277px 277px;
   gap: 16px;

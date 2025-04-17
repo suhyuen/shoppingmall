@@ -2,7 +2,8 @@ import "../css/header.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { login, logout } from "../features/userSlice";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function Header() {
   const navigate = useNavigate();
@@ -28,9 +29,39 @@ export default function Header() {
     dispatch(login(userData));
   };
 
-  const handleClick = (category) => {
-    navigate("/product/${category.toLowerCase()");
-  };
+
+  const [product, setProduct] = useState([
+    {
+      productId: "",
+      categoryId: "",
+      productName: "",
+      price: ""
+    }
+  ])
+
+
+  const queryParams = new URLSearchParams(location.search);
+  const categoryId = queryParams.get("categoryId");
+
+
+  useEffect(() => {
+
+    const endpoint = categoryId
+      ? `http://localhost:8080/selectProduct?categoryId=${categoryId}`
+      : "http://localhost:8080/selectAllProduct";
+
+    axios
+      .post(
+        endpoint, { categoryId },
+        {
+          headers: { Authorization: localStorage.getItem("accessToken") },
+        }
+      )
+      .then((resp) => {
+        setProduct(resp.data);
+      });
+  }, [categoryId]);
+
 
   return (
     <header>
@@ -39,88 +70,40 @@ export default function Header() {
           <Link to="/">Monologue</Link>
         </div>
         <ul>
-          <li
-            onClick={() => handleClick("NEW-IN 5%")}
-            style={{
-              fontWeight:
-                location.pathname === "/product/new-in-5" ? "bold" : "normal",
-            }}
-          >
-            NEW-IN 5%
-          </li>
-          <li
-            onClick={() => handleClick("BEST 50")}
-            style={{
-              fontWeight:
-                location.pathname === "/product/best-50" ? "bold" : "normal",
-            }}
-          >
-            BEST 50
-          </li>
-          <li
-            onClick={() => handleClick("TOP")}
-            style={{
-              fontWeight:
-                location.pathname === "/product/top" ? "bold" : "normal",
-            }}
-          >
-            TOP
-          </li>
-          <li
-            onClick={() => handleClick("BOTTOM")}
-            style={{
-              fontWeight:
-                location.pathname === "/product/bottom" ? "bold" : "normal",
-            }}
-          >
-            BOTTOM
-          </li>
-          <li
-            onClick={() => handleClick("OUTWEAR")}
-            style={{
-              fontWeight:
-                location.pathname === "/product/outwear" ? "bold" : "normal",
-            }}
-          >
-            OUTWEAR
-          </li>
-          <li
-            onClick={() => handleClick("SUIT")}
-            style={{
-              fontWeight:
-                location.pathname === "/product/suit" ? "bold" : "normal",
-            }}
-          >
-            SUIT
-          </li>
-          <li
-            onClick={() => handleClick("KNIT")}
-            style={{
-              fontWeight:
-                location.pathname === "/product/knit" ? "bold" : "normal",
-            }}
-          >
-            KNIT
-          </li>
-          <li
-            onClick={() => handleClick("SHOESE/BAG")}
-            style={{
-              fontWeight:
-                location.pathname === "/product/shoes-bag" ? "bold" : "normal",
-            }}
-          >
-            SHOESE/BAG
-          </li>
-          <li
-            onClick={() => handleClick("ACC")}
-            style={{
-              fontWeight:
-                location.pathname === "/product/acc" ? "bold" : "normal",
-            }}
-          >
-            ACC
-          </li>
+          <li><Link
+            to="/product"
+            className={categoryId === null || categoryId === "" ? "selected" : ""}
+          >All</Link></li>
+          <li><Link
+            to={`/product?categoryId=1`}
+            className={categoryId === "1" ? "selected" : ""}
+          >TOP</Link></li>
+          <li><Link
+            to={`/product?categoryId=2`}
+            className={categoryId === "2" ? "selected" : ""}
+          >BOTTOM</Link></li>
+          <li><Link
+            to={`/product?categoryId=3`}
+            className={categoryId === "3" ? "selected" : ""}
+          >OUTWEAR</Link></li>
+          <li><Link
+            to={`/product?categoryId=4`}
+            className={categoryId === "4" ? "selected" : ""}
+          >SUIT</Link></li>
+          <li><Link
+            to={`/product?categoryId=5`}
+            className={categoryId === "5" ? "selected" : ""}
+          >KNIT</Link></li>
+          <li><Link
+            to={`/product?categoryId=6`}
+            className={categoryId === "6" ? "selected" : ""}
+          >SHOESE/BAG</Link></li>
+          <li><Link
+            to={`/product?categoryId=7`}
+            className={categoryId === "7" ? "selected" : ""}
+          >ACC</Link></li>
         </ul>
+
         <div className="loginbutton">
           {/* 로그인 상태에 따라 버튼 변경 */}
           {isLoggedIn ? (
@@ -138,6 +121,6 @@ export default function Header() {
           )}
         </div>
       </div>
-    </header>
+    </header >
   );
 }

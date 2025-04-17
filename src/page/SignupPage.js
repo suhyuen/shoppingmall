@@ -260,14 +260,10 @@ export default function SignupPage() {
                     value={phone3}
                     onChange={handlePhone3Change}
                   />
-                  <button type="button">인증 받기</button>
+
                 </div>
               </div>
-              <div className="signup_phonenumber">
-                <p>인증번호 입력</p>
-                <input type="text"></input>
-                <button type="button">인증번호 확인</button>
-              </div>
+
             </div>
           </div>
 

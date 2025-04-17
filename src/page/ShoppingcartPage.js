@@ -1,24 +1,98 @@
+import { useEffect, useState } from "react";
 import Footer from "../component/Footer";
 import Header from "../component/Header";
 import "../css/orderlistpage.css";
+import { useLocation, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export default function ShoppingcartPage() {
-  const handleDeleteClick = () => {
+
+  const navigate = useNavigate()
+
+  const [userData, setUserData] = useState({
+    uid: ""
+  })
+
+  const [cartData, setCartData] = useState([{
+    cartId: "",
+    userUid: "",
+    productId: "",
+    quantity: "",
+    product: {
+      productName: "",
+      price: "",
+      productImageId: "",
+    },
+    productImages: {
+      productImagePath: ""
+    }
+  }])
+
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const uid = queryParams.get("uid");
+
+  useEffect(() => {
+    axios.post(`http://localhost:8080/selectCart?uid=${uid}`, { uid },
+      {
+        headers: { Authorization: localStorage.getItem("accessToken") },
+      }
+    ).then((resp) => {
+      setCartData(resp.data)
+    })
+  })
+
+  const handleDeleteClick = (cartId) => {
     const userConfirmed = window.confirm("장바구니에서 삭제하시겠습니까?");
 
     if (userConfirmed) {
-      alert("삭제되었습니다.");
+      console.log("삭제할 데이터:", { uid, cartId });
+      axios.post("http://localhost:8080/deleteCart", { cartId },
+        {
+          headers: { Authorization: localStorage.getItem("accessToken") },
+        }
+      ).then((e) => {
+        console.log("서버 응답:", e);
+        alert("삭제되었습니다.");
+        navigate(`/cart?uid=${uid}`);
+      }).catch((error) => {
+        console.error("삭제 요청 실패:", error);
+        alert("삭제 실패했습니다.");
+      })
     } else {
       alert("취소되었습니다");
     }
   };
+
+
+  const cartList = cartData.map((data) => {
+    const imageUrl = `http://localhost:8080${data.productImages.productImagePath.replace(/ /g, '%20')}`;
+    return (
+      <div className="orderlistpage_main_list">
+        <div>
+          <input type="checkbox"></input>
+          <div>
+            <img src={imageUrl} width="100px" height="100px"></img>
+            <p>{data.product.productName}</p>
+          </div>
+          <div onClick={() => handleDeleteClick(data.cartId)}>
+            <p>x</p>
+          </div>
+        </div>
+        <div>{data.quantity}</div>
+        <div>{data.product.price}</div>
+      </div>
+    )
+  })
+
+
   return (
     <>
       <Header></Header>
       <nav>
         <div className="orderlistpage">
           <div className="orderlistpage_title">
-            <p>주문 내역</p>
+            <p>Cart List</p>
           </div>
           <div className="orderlistpage_main">
             <div>
@@ -33,48 +107,7 @@ export default function ShoppingcartPage() {
                 <p>가격</p>
               </div>
             </div>
-            <div className="orderlistpage_main_list">
-              <div>
-                <input type="checkbox"></input>
-                <div>
-                  <img src="" width="100px" height="100px"></img>
-                  <p>메이슨 체크 오버 셔츠</p>
-                </div>
-                <div onClick={handleDeleteClick}>
-                  <p>x</p>
-                </div>
-              </div>
-              <div>1</div>
-              <div>3,9000</div>
-            </div>
-            <div className="orderlistpage_main_list">
-              <div>
-                <input type="checkbox"></input>
-                <div>
-                  <img src="" width="100px" height="100px"></img>
-                  <p>메이슨 체크 오버 셔츠</p>
-                </div>
-                <div onClick={handleDeleteClick}>
-                  <p>x</p>
-                </div>
-              </div>
-              <div>1</div>
-              <div>3,9000</div>
-            </div>
-            <div className="orderlistpage_main_list">
-              <div>
-                <input type="checkbox"></input>
-                <div>
-                  <img src="" width="100px" height="100px"></img>
-                  <p>메이슨 체크 오버 셔츠</p>
-                </div>
-                <div onClick={handleDeleteClick}>
-                  <p>x</p>
-                </div>
-              </div>
-              <div>1</div>
-              <div>3,9000</div>
-            </div>
+            {cartList}
           </div>
         </div>
       </nav>

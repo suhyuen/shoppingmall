@@ -3,7 +3,7 @@ header {
   width: 1730px;
 }
 
-header > div {
+header>div {
   display: flex;
   margin: 0 auto;
   width: 1160px;
@@ -17,12 +17,12 @@ header > div {
   font-family: "Jaini";
 }
 
-header > div > ul {
+header>div>ul {
   display: flex;
   gap: 40px;
 }
 
-header > div > ul > li {
+header>div>ul>li {
   font-family: "Inria";
 }
 
@@ -34,7 +34,7 @@ header > div > ul > li {
   font-family: "Inika";
 }
 
-.loginbutton > button {
+.loginbutton>button {
   top: 20px;
   right: 40px;
   font-size: 20px;
@@ -45,6 +45,17 @@ header > div > ul > li {
   box-sizing: border-box;
 }
 
-.loginbutton > button:first-child {
+.loginbutton>button:first-child {
   border-right: 1px solid black;
+}
+
+.admin_logout {
+  position: absolute;
+  top: -20px;
+  right: 300px;
+  width: 100px;
+}
+
+.active {
+  font-weight: bold;
 }

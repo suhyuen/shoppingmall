@@ -1,0 +1,50 @@
+.admin_dashboard{
+    width:1160px;
+    margin : 0 auto;
+}
+
+.admin_dashoboard_top{
+    display:flex;
+    gap:40px;
+    margin-top: 100px;
+    flex-direction: column;
+    border-top:0.5px solid black;
+    padding-top: 40px;
+}
+
+.admin_dashboard_top4{
+    display:flex;
+    gap:16px;
+}
+
+.admin_dashboard_mid{
+    width:1160px;
+    height:40px;
+    margin-top: 70px;
+    background-color: #e6e6e6;
+}
+
+.admin_dashboard_last{
+    margin-top: 40px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.admin_dashboard_last>p{
+    font-size: 20px;
+    font-family: "inika";
+}
+
+
+.admin_dashboard_graf{
+    display:flex;
+    gap:24px;
+    margin-top: 24px;
+}
+
+.admin_dashboard_graf>div{
+    display:flex;
+    flex-direction: column;
+    gap:16px;
+}
